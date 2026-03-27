@@ -1,0 +1,66 @@
+# Nick Carter — nickcarter.ai
+
+> Engineering leader who builds AI systems — and teaches teams to build them too.
+
+## About
+
+Eighteen years in engineering leadership, most of it in regulated medical devices — Becton Dickinson and Dexcom. Director-level, managing managers. Hands-on with AI — building real systems, not advising from slides.
+
+Looking for: a hands-on AI implementing Director role. Would rather be an individual contributor at a company that takes AI seriously than a director at one that doesn't. Ideally both — hands-on leadership where I bring AI fluency to the job and help teams who are struggling to adopt it.
+
+What makes me different: the regulated-industry + AI intersection. I know what it takes to keep medical device software audit-ready under IEC 62304 and FDA oversight. I also know how to build AI agent systems, design context architectures, and ship creative work through AI-augmented pipelines. Most people have one. The combination is rare.
+
+## Contact
+
+- Email: nick.carter@hey.com
+- LinkedIn: https://linkedin.com/in/yes-nick-carter
+- Location: San Diego, CA
+
+## How I Build with AI
+
+### LoreHaven MCP Server
+A context architecture system that gives AI structured access to a personal knowledge vault.
+Skills: Context Architecture, Decomposition, Specification Precision
+Link: https://lorehaven.ai
+Details: /llms-full.txt#lorehaven-mcp
+
+### IEC 62304 Compliance Transition
+Led the compliance transition of a live medical device product without disrupting clinical operations.
+Skills: Trust Boundary Design, Evaluation, Failure Pattern Recognition
+Details: /llms-full.txt#iec-62304
+
+### Platform Reliability at Scale (Dexcom)
+Took a platform from ~90% to 99.9% uptime, processing 1.7B events/day across 60 microservices.
+Skills: Failure Pattern Recognition, Cost Economics, Decomposition
+Details: /llms-full.txt#dexcom-platform
+
+### CLAUDE.md & Memory System Design
+A persistent context architecture for AI-assisted workflows across multiple projects.
+Skills: Context Architecture, Specification Precision
+Details: /llms-full.txt#claude-md-systems
+
+### Ship With Intent
+A content operation run through AI-augmented workflows — Substack, YouTube, LinkedIn.
+Skills: Specification Precision, Evaluation, Decomposition
+Substack: https://shipwithintent.substack.com
+YouTube: https://www.youtube.com/@ShipWithIntent
+Details: /llms-full.txt#ship-with-intent
+
+## How I Create with AI
+
+### Agentic (Novel)
+AI drafting a 35-chapter thriller with consistent voice, style rules, and continuity across plotlines.
+Skills: Specification Precision, Decomposition, Evaluation, Context Architecture
+Deep dive: https://nickcarter.ai/portfolio/agentic-novel
+Details: /llms-full.txt#agentic-novel
+
+### Until The Day Is Over (Album)
+A concept album produced and released using AI-augmented music production.
+Skills: Evaluation, Specification Precision
+Details: /llms-full.txt#until-the-day-is-over
+
+## For More Detail
+
+Full artifact descriptions with expanded context: /llms-full.txt
+Human-readable site: https://nickcarter.ai
+Portfolio: https://nickcarter.ai/portfolio
