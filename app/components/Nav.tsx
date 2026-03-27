@@ -11,7 +11,7 @@ export default function Nav() {
       </Link>
       <Link
         href="/portfolio"
-        className="text-sm tracking-wide uppercase text-[#555] hover:text-[#111] transition-colors"
+        className="nav-link text-sm tracking-wide uppercase text-[#555] hover:text-[#111] transition-colors"
       >
         Portfolio
       </Link>

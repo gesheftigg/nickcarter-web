@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import SectionHeader from "../components/SectionHeader";
 import ArtifactDetail from "../components/ArtifactDetail";
+import ScrollReveal from "../components/ScrollReveal";
+import PageTransition from "../components/PageTransition";
 import { artifacts } from "@/lib/artifacts";
 
 export const metadata: Metadata = {
@@ -21,44 +23,60 @@ export default function PortfolioPage() {
   ];
 
   return (
-    <div className="py-16">
-      <h1 className="text-3xl md:text-4xl font-[family-name:var(--font-serif)] font-normal text-[#111] leading-tight">
-        Portfolio
-      </h1>
-      <p className="mt-3 text-base text-[#777] max-w-2xl">
-        A closer look at how I build and create with AI.
-      </p>
+    <PageTransition>
+      <div className="py-16">
+        <ScrollReveal>
+          <h1 className="text-3xl md:text-4xl font-[family-name:var(--font-serif)] font-normal text-[#111] leading-tight">
+            Portfolio
+          </h1>
+          <p className="mt-3 text-base text-[#777] max-w-2xl">
+            A closer look at how I build and create with AI.
+          </p>
+        </ScrollReveal>
 
-      <div>
-        <SectionHeader title="How I Build with AI" />
-        {buildArtifacts.map((artifact) => (
-          <ArtifactDetail key={artifact.id} artifact={artifact} />
-        ))}
-      </div>
-
-      <div>
-        <SectionHeader title="How I Create with AI" />
-        {createArtifacts.map((artifact) => (
-          <ArtifactDetail key={artifact.id} artifact={artifact} />
-        ))}
-      </div>
-
-      <div>
-        <SectionHeader title="Links" />
-        <div className="flex flex-wrap gap-4">
-          {externalLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              target={link.href.startsWith("mailto:") ? undefined : "_blank"}
-              rel={link.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
-              className="inline-block border-2 border-[#111] px-5 py-3 text-sm font-medium text-[#111] hover:bg-[#111] hover:text-white transition-colors"
-            >
-              {link.label}
-            </a>
+        <div>
+          <ScrollReveal>
+            <SectionHeader title="How I Build with AI" />
+          </ScrollReveal>
+          {buildArtifacts.map((artifact, i) => (
+            <ScrollReveal key={artifact.id} delay={i * 0.1}>
+              <ArtifactDetail artifact={artifact} />
+            </ScrollReveal>
           ))}
         </div>
+
+        <div>
+          <ScrollReveal>
+            <SectionHeader title="How I Create with AI" />
+          </ScrollReveal>
+          {createArtifacts.map((artifact, i) => (
+            <ScrollReveal key={artifact.id} delay={i * 0.1}>
+              <ArtifactDetail artifact={artifact} />
+            </ScrollReveal>
+          ))}
+        </div>
+
+        <div>
+          <ScrollReveal>
+            <SectionHeader title="Links" />
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <div className="flex flex-wrap gap-4">
+              {externalLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target={link.href.startsWith("mailto:") ? undefined : "_blank"}
+                  rel={link.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                  className="inline-block border-2 border-[#111] px-5 py-3 text-sm font-medium text-[#111] hover:bg-[#111] hover:text-white transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
       </div>
-    </div>
+    </PageTransition>
   );
 }

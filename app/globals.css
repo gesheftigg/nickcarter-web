@@ -131,6 +131,60 @@
   color: #111;
 }
 
+/* ── Hover micro-interactions ── */
+
+/* Card accent bar thickens + content shifts on hover */
+.artifact-card {
+  position: relative;
+}
+
+.artifact-card:hover > .absolute {
+  width: 4px !important;
+}
+
+.artifact-card:hover > :not(.absolute) {
+  transform: translateX(2px);
+  transition: transform 0.2s ease-out;
+}
+
+/* "View Details →" / "Read →" arrow moves right on hover */
+.view-details-arrow {
+  display: inline-block;
+  transition: transform 0.2s ease-out;
+}
+
+.view-details-link:hover .view-details-arrow,
+.group:hover .view-details-arrow {
+  transform: translateX(4px);
+}
+
+/* Nav link underline draws from left on hover */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #111;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Hero buttons subtle fill on hover */
+.hero-btn {
+  transition: background-color 0.2s ease-out, color 0.2s ease-out;
+}
+
 .prose table {
   width: 100%;
   border-collapse: collapse;

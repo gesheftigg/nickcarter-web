@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { artifacts } from "@/lib/artifacts";
+import ScrollReveal from "@/app/components/ScrollReveal";
+import PageTransition from "@/app/components/PageTransition";
 
 export const metadata: Metadata = {
   title: "Agentic — AI-Assisted Novel Drafting System — Nick Carter",
@@ -56,54 +58,63 @@ export default function AgenticNovelPage() {
   const paragraphs = artifact.detail.split("\n\n");
 
   return (
-    <div className="py-16">
-      <Link
-        href="/portfolio"
-        className="text-xs uppercase tracking-[0.12em] text-[#999] hover:text-[#111] transition-colors"
-      >
-        &larr; Back to Portfolio
-      </Link>
+    <PageTransition>
+      <div className="py-16">
+        <Link
+          href="/portfolio"
+          className="text-xs uppercase tracking-[0.12em] text-[#999] hover:text-[#111] transition-colors"
+        >
+          &larr; Back to Portfolio
+        </Link>
 
-      <h1 className="mt-8 text-3xl md:text-4xl font-[family-name:var(--font-serif)] font-normal text-[#111] leading-tight">
-        Agentic — AI-Assisted Novel Drafting System
-      </h1>
+        <ScrollReveal>
+          <h1 className="mt-8 text-3xl md:text-4xl font-[family-name:var(--font-serif)] font-normal text-[#111] leading-tight">
+            Agentic — AI-Assisted Novel Drafting System
+          </h1>
 
-      <p className="mt-4 text-[11px] uppercase tracking-[0.12em] text-[#999]">
-        {artifact.skills.join(" \u00B7 ")}
-      </p>
-
-      <div className="mt-8 max-w-[65ch] space-y-4">
-        {paragraphs.map((paragraph, i) => (
-          <p key={i} className="text-base leading-[1.7] text-[#555]">
-            {paragraph}
+          <p className="mt-4 text-[11px] uppercase tracking-[0.12em] text-[#999]">
+            {artifact.skills.join(" \u00B7 ")}
           </p>
-        ))}
-      </div>
+        </ScrollReveal>
 
-      <div className="mt-20 border-t-2 border-[#111] pt-6">
-        <h2 className="text-2xl font-[family-name:var(--font-serif)] font-normal text-[#111] mb-8">
-          Documents
-        </h2>
-        <div className="grid gap-6 sm:grid-cols-2">
-          {documents.map((doc) => (
-            <Link
-              key={doc.href}
-              href={doc.href}
-              className="group block border-t border-[#ddd] pt-5 hover:border-[#111] transition-colors"
-            >
-              <h3 className="text-base font-[family-name:var(--font-serif)] font-normal text-[#111] group-hover:text-[#555]">
-                {doc.title}
-              </h3>
-              <p className="mt-2 text-sm text-[#777] leading-relaxed">
-                {doc.description}
+        <ScrollReveal delay={0.1}>
+          <div className="mt-8 max-w-[65ch] space-y-4">
+            {paragraphs.map((paragraph, i) => (
+              <p key={i} className="text-base leading-[1.7] text-[#555]">
+                {paragraph}
               </p>
-              <p className="mt-3 text-sm font-medium text-[#111] group-hover:text-[#555] transition-colors">
-                Read &rarr;
-              </p>
-            </Link>
-          ))}
-        </div>
+            ))}
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.2}>
+          <div className="mt-20 border-t-2 border-[#111] pt-6">
+            <h2 className="text-2xl font-[family-name:var(--font-serif)] font-normal text-[#111] mb-8">
+              Documents
+            </h2>
+            <div className="grid gap-6 sm:grid-cols-2">
+              {documents.map((doc, i) => (
+                <ScrollReveal key={doc.href} delay={i * 0.08}>
+                  <Link
+                    href={doc.href}
+                    className="group block border-t border-[#ddd] pt-5 hover:border-[#111] transition-colors"
+                  >
+                    <h3 className="text-base font-[family-name:var(--font-serif)] font-normal text-[#111] group-hover:text-[#555]">
+                      {doc.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-[#777] leading-relaxed">
+                      {doc.description}
+                    </p>
+                    <p className="mt-3 text-sm font-medium text-[#111] group-hover:text-[#555] transition-colors view-details-link">
+                      Read <span className="view-details-arrow">&rarr;</span>
+                    </p>
+                  </Link>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </ScrollReveal>
       </div>
-    </div>
+    </PageTransition>
   );
 }

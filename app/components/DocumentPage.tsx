@@ -1,4 +1,6 @@
 import Link from "next/link";
+import PageTransition from "./PageTransition";
+import ScrollReveal from "./ScrollReveal";
 
 interface DocumentPageProps {
   title: string;
@@ -14,20 +16,26 @@ export default function DocumentPage({
   children,
 }: DocumentPageProps) {
   return (
-    <div className="py-16">
-      <Link
-        href={backLink.href}
-        className="text-xs uppercase tracking-[0.12em] text-[#999] hover:text-[#111] transition-colors"
-      >
-        &larr; {backLink.label}
-      </Link>
+    <PageTransition>
+      <div className="py-16">
+        <Link
+          href={backLink.href}
+          className="text-xs uppercase tracking-[0.12em] text-[#999] hover:text-[#111] transition-colors"
+        >
+          &larr; {backLink.label}
+        </Link>
 
-      <h1 className="mt-8 text-3xl md:text-4xl font-[family-name:var(--font-serif)] font-normal text-[#111] leading-tight">
-        {title}
-      </h1>
-      <p className="mt-3 text-base text-[#777] max-w-2xl">{description}</p>
+        <ScrollReveal>
+          <h1 className="mt-8 text-3xl md:text-4xl font-[family-name:var(--font-serif)] font-normal text-[#111] leading-tight">
+            {title}
+          </h1>
+          <p className="mt-3 text-base text-[#777] max-w-2xl">{description}</p>
+        </ScrollReveal>
 
-      <div className="mt-12 prose">{children}</div>
-    </div>
+        <ScrollReveal delay={0.1}>
+          <div className="mt-12 prose">{children}</div>
+        </ScrollReveal>
+      </div>
+    </PageTransition>
   );
 }

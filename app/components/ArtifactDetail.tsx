@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import type { Artifact } from "@/lib/artifacts";
 
 interface ArtifactDetailProps {
@@ -10,8 +12,16 @@ export default function ArtifactDetail({ artifact }: ArtifactDetailProps) {
   return (
     <article
       id={artifact.id}
-      className="py-10 border-l-[3px] border-[#111] pl-6 mb-10"
+      className="py-10 relative pl-6 mb-10"
     >
+      {/* Animated accent bar */}
+      <motion.div
+        className="absolute left-0 top-0 w-[3px] bg-black"
+        initial={{ height: 0 }}
+        whileInView={{ height: "100%" }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+      />
       <h3 className="text-xl font-[family-name:var(--font-serif)] font-normal text-[#111]">
         {artifact.title}
       </h3>

@@ -2,6 +2,8 @@ import Hero from "./components/Hero";
 import Summary from "./components/Summary";
 import SectionHeader from "./components/SectionHeader";
 import ArtifactCard from "./components/ArtifactCard";
+import ScrollReveal from "./components/ScrollReveal";
+import PageTransition from "./components/PageTransition";
 import { artifacts } from "@/lib/artifacts";
 
 export default function Home() {
@@ -9,27 +11,39 @@ export default function Home() {
   const createArtifacts = artifacts.filter((a) => a.section === "create");
 
   return (
-    <div>
-      <Hero />
-      <Summary />
+    <PageTransition>
+      <div>
+        <Hero />
+        <ScrollReveal>
+          <Summary />
+        </ScrollReveal>
 
-      <div id="artifacts" className="py-16">
-        <SectionHeader title="How I Build with AI" />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {buildArtifacts.map((artifact) => (
-            <ArtifactCard key={artifact.id} artifact={artifact} />
-          ))}
-        </div>
-
-        <div>
-          <SectionHeader title="How I Create with AI" />
+        <div id="artifacts" className="py-16">
+          <ScrollReveal>
+            <SectionHeader title="How I Build with AI" />
+          </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {createArtifacts.map((artifact) => (
-              <ArtifactCard key={artifact.id} artifact={artifact} />
+            {buildArtifacts.map((artifact, i) => (
+              <ScrollReveal key={artifact.id} delay={i * 0.1}>
+                <ArtifactCard artifact={artifact} />
+              </ScrollReveal>
             ))}
+          </div>
+
+          <div>
+            <ScrollReveal>
+              <SectionHeader title="How I Create with AI" />
+            </ScrollReveal>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {createArtifacts.map((artifact, i) => (
+                <ScrollReveal key={artifact.id} delay={i * 0.1}>
+                  <ArtifactCard artifact={artifact} />
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </PageTransition>
   );
 }
