@@ -1,0 +1,49 @@
+# Lessons Learned — Agentic Novel Drafting System
+
+Organized by document. Each section lists real challenges encountered and how they were resolved.
+
+---
+
+## The Drafting Skill (SKILL.md)
+
+- **Context loading order is load-bearing.** Loading the ban list and prose rules *before* writing (as prevention) works far better than checking against them after (as correction). The AI internalizes constraints it reads before generating but struggles to retroactively catch violations in its own output.
+- **Plotline siloing was discovered through failure, not theory.** Early experiments where both plotlines were loaded caused characters to reference information they shouldn't have. Graham's interior observations bled into Sloane chapters. The absolute siloing rule — never load the other track — came from watching the output break, not from planning.
+- **The skill consistently drafted under word count targets.** L chapters (3,500-4,000 target) came in at 2,200-2,700 words. The specification was precise enough for beat coverage but didn't enforce density. The beats all landed, but the scenes were lean. This suggests word count targets need to be paired with pacing guidance — "let this scene breathe" vs. "get in and get out."
+- **A speed mode was essential.** During a drafting sprint, stopping for a full post-draft report between every chapter kills momentum. Adding "if Nick says 'next' — skip the report" was a small change that doubled throughput.
+
+## Style Guide — Narrative Rules & POV System
+
+- **Two rules contradicted each other and nobody noticed until drafting was imminent.** "What goes on the page: dialogue, action, setting — nothing else" directly conflicted with "third-person omniscient with POV-character thought intrusion." Interior monologue is, by definition, none of those three things. Resolution: the "nothing else" rule was about killing editorializing and emotional labeling, not killing interior access. The rule was rewritten to four things (adding POV interior monologue) with explicit guidance on what does NOT go on the page.
+- **The POV system required a plausibility mechanism.** If Sloane is telling this story to the FBI, how can she narrate Graham's interior thoughts from chapters where she wasn't present? Rather than handwave it, we added a scene in Chapter 21 where Sloane asks Graham about Ceci during a 10-hour road trip. The scene cuts before the answer, but the reader understands they had hours to talk. This is an internal rule that's never stated in the text — it just makes the narration feel honest.
+- **"Sloane's voice, not an author's voice" was the hardest calibration.** The first instinct was McCarthy-austere. Nick corrected this: he wanted McCarthy's brevity but Vonnegut's campfire warmth. The test became: "if this sentence could appear in any thriller by any author, it's too generic. If it could only come from the person telling this specific story, it belongs." That test reframed the entire voice calibration from style rules to personality.
+
+## Ban List — What the Prose Must Never Do
+
+- **The ban list catches vocabulary tells but can't catch reasoning tells.** "Sycophantic confirmation" — the AI agreeing with wrong premises — is the most dangerous failure pattern and the ban list is useless against it. The AI won't use the word "palpable" if you ban it, but it will cheerfully build an entire scene on a wrong assumption about character motivation if you don't catch it in the outline.
+- **The "one exception" rule saved the ban list from being too rigid.** Dark humor is allowed to break any rule if the break itself is the joke. Vic eating birthday cake while holding a senator at gunpoint breaks description conventions deliberately. Without the exception, the ban list would have flattened the moments that make the characters feel real.
+- **AI-voice tells evolve faster than ban lists.** The current list was built from patterns observed in 2025-2026 model outputs. "Hung in the air," "a silence stretched between them," "something shifted in" — these are today's tells. Tomorrow's will be different. The ban list is a living document, not a finished one.
+
+## Chapter Outline — Beat Structure
+
+- **The outline is a contract, not a suggestion.** Early experiments where the AI was given freedom to "interpret" the outline produced chapters that drifted from the story's architecture. The rule became absolute: every beat must appear, no beats added, no beats skipped. The AI's job is to execute the outline, not improve it. Improvements happen in the outline, not during drafting.
+- **"Thin" outlines produce thin drafts.** Chapters with detailed beat lists, emotional arcs, and specific dialogue notes produced substantially better first drafts than chapters with only a summary and a few bullet points. The pre-draft checklist catches thin outlines and offers to flesh them out before drafting — this was added after a thin chapter produced a draft that needed rewriting from scratch.
+- **Hidden layers and cold tags don't write themselves.** The outline says "the reader should feel X" or "the hidden layer is Y" but the AI doesn't automatically translate subtext notes into prose that achieves the subtext. The author has to decide how the hidden layer manifests on the page. This remains an unsolved problem — the skill can enforce what appears, but not what it means.
+
+## Progress Tracking — Human vs. AI Responsibilities
+
+- **The biggest insight was separating "Nick's input needed" from "Claude can handle."** The original remaining-work document was a flat list of everything that needed to happen. Reorganizing it into two categories — decisions only Nick can make vs. work Claude can do just-in-time — eliminated the feeling of being blocked. Nick could focus on the creative decisions while knowing the mechanical work would happen automatically.
+- **Voice guides were the most common blocker.** Three characters (Minty, Mara, Jenny Deeb) had missing or incomplete voice guides. Each one blocked drafting of multiple chapters. The lesson: voice guides should be created before anything else, not just-in-time. A missing voice guide doesn't just slow you down — it produces a draft with a character who sounds generic, which is worse than no draft at all.
+- **The disgrace removal touched 24 files.** What seemed like a simple creative decision ("Graham starts at the top, not disgraced") cascaded into changes across character files, chapter outlines, AOS structural analysis, the plot roadmap, the query letter, and the manuscript. An AI agent audited every file for references. Without systematic search, several files would have shipped with contradictory information. Creative decisions at the story level are technical decisions at the file level.
+
+## Sample Draft — Chapter 1 Output
+
+- **The first draft established the voice calibration for everything after.** Chapter 1's prose became the reference point. When subsequent chapters drifted in tone or rhythm, the fix was "read Chapter 1 again" — not adjusting the style rules. A concrete example is worth more than any amount of rule specification.
+- **First-person-feeling narration in third person was hard to calibrate.** The manuscript samples were written in a loose first person ("I looked for something for Vic to drink"). The drafting system needed to produce the same intimate, Sloane-telling-a-story feeling in third person. The solution was the POV rules — first-person access, third-person grammar — but it took several iterations to get the AI to stop writing "she felt" and start writing the way Sloane would think.
+- **Character introductions are set-pieces that the AI does well.** The dense one-paragraph introductions (appearance → what it means → the truth underneath) are a strength of AI drafting. The Vic introduction, the Bridget introduction, the senator's study — these worked on the first pass. The AI struggles more with sustained dialogue subtext than with descriptive precision.
+
+## The Process — How the System Was Built
+
+- **The most important creative decisions came from personal experience, not story theory.** Minty's voice came from Nick's daughter being friends with Tony Hawk's daughter — the energy of disappearing when a famous parent enters the room. Mara's voice came from the Terminator 2 ending. The father-daughter dynamic came from rejecting a cliche ("I don't want the absent-father thing — that's overused"). The best inputs to the AI were specific, personal observations, not abstract character notes.
+- **Removing the disgrace was the highest-impact single decision.** It changed 24 files, simplified the story's premise, made the antagonist more powerful (Mara doesn't need a pre-weakened target), and unlocked a better father-daughter dynamic. The decision took 15 minutes of conversation. The implementation took an hour. The ratio of thinking time to execution time should always look like that.
+- **The brainstorming-to-drafting pipeline in a single session was the real achievement.** Voice guides created, style rules locked, POV system resolved, three chapters drafted — all in one evening. The traditional approach would spread this across weeks of separate sessions with context loss between each one. The system's context architecture (CLAUDE.md, memory files, skill specs) is what made the single-session pipeline possible.
+- **Building the website in the same session as writing the novel was unplanned and instructive.** The pivot from novel drafting to career site happened naturally — the Nate Jones article arrived, the seven-skills assessment showed the novel system was itself a portfolio piece, and the spec-to-plan-to-build pipeline produced a deployed site in the same session. This is the "Intent Engineering" thesis in action: AI as a structured thinking partner that can shift domains without losing context.
