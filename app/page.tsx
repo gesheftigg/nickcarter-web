@@ -4,6 +4,8 @@ import SectionHeader from "./components/SectionHeader";
 import ArtifactCard from "./components/ArtifactCard";
 import ScrollReveal from "./components/ScrollReveal";
 import PageTransition from "./components/PageTransition";
+import SiteMapDiagram from "./components/SiteMapDiagram";
+import WorkflowDiagram from "./components/WorkflowDiagram";
 import { artifacts } from "@/lib/artifacts";
 
 export default function Home() {
@@ -14,11 +16,17 @@ export default function Home() {
     <PageTransition>
       <div>
         <Hero />
+
+        <SiteMapDiagram />
+
         <ScrollReveal>
           <Summary />
         </ScrollReveal>
 
         <div id="artifacts" className="py-16">
+
+          <WorkflowDiagram />
+
           <ScrollReveal>
             <SectionHeader title="How I Build with AI" />
           </ScrollReveal>

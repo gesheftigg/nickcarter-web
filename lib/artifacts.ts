@@ -23,30 +23,6 @@ export const artifacts: Artifact[] = [
     deepDivePath: "/portfolio/lorehaven",
   },
   {
-    id: "iec-62304",
-    title: "IEC 62304 Compliance Transition",
-    oneLiner:
-      "Led the compliance transition of a live medical device product without disrupting clinical operations.",
-    skills: [
-      "Trust Boundary Design",
-      "Evaluation",
-      "Failure Pattern Recognition",
-    ],
-    section: "build",
-    detail:
-      "At Becton Dickinson, Nick led a multi-level engineering org of 14 engineers and testers across 2–3 engineering leads — a manager-of-managers structure where his job was to set direction and develop the leads, not solve the problems directly. He defined and owned a 3-year software platform strategy that was adopted by executive leadership and aligned to a multi-product regulatory roadmap. That strategy directly enabled an on-time transition to FDA Class II Medical Device classification under IEC 62304.\n\nThe central constraint was that the product was live and serving clinical operations. There was no option to take it offline, freeze it, or run a parallel build and cut over. Every compliance change had to land in a system that was actively being used in healthcare settings, which meant the transition had to be staged carefully, tested against a moving target, and sequenced to avoid disrupting care delivery. The architecture decisions, the testing approach, and the team structure all had to account for that reality.\n\nAlongside the compliance work, Nick reversed a major customer cancellation by architecting a custom solution for an account that was heading out the door. That account became the second-largest in the company's portfolio. The two things aren't unrelated — the same instinct that drives good compliance work (understand the constraint, design to the edge of it) is what turns a cancellation call into a retained customer.",
-  },
-  {
-    id: "dexcom-platform",
-    title: "Platform Reliability at Scale",
-    oneLiner:
-      "Took a platform from ~90% to 99.9% uptime, processing 1.7B events/day across 60 microservices.",
-    skills: ["Failure Pattern Recognition", "Cost Economics", "Decomposition"],
-    section: "build",
-    detail:
-      "At Dexcom, Nick led a globally distributed engineering organization of 23 people — 8 direct plus 15 offshore contractors — running real-time platforms that supported more than 1 million connected diabetes management devices. The scale wasn't just large; it was high-stakes. A missed event or a degraded pipeline has direct implications for patients managing a chronic condition with continuous glucose monitoring data.\n\nWhen Nick took over, platform reliability was running around 90% uptime. He drove it to 99.9% through a combination of systematic reliability engineering, testing investment, and observability improvements that made failure modes visible before they became incidents. Production incidents dropped 95%. Cloud infrastructure spend fell 22% without sacrificing performance — the two outcomes aren't contradictory when you understand where the waste actually lives in a distributed system.\n\nEvery decision operated inside a regulated environment. HIPAA required audit trails for deployments, schema changes, and infrastructure modifications. Data residency rules constrained where computation could happen. Encryption requirements applied end to end. The combination — 1M+ devices, 1.7 billion events per day, 60 microservices, and healthcare compliance overhead — meant every architectural choice had to balance speed against safety. Shipping fast was the goal. Shipping correctly was the constraint.",
-  },
-  {
     id: "claude-md-systems",
     title: "CLAUDE.md & Memory System Design",
     oneLiner:
