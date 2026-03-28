@@ -6,7 +6,7 @@ import PageTransition from "@/app/components/PageTransition";
 import ArchitectureDiagram from "./architecture-diagram";
 
 export const metadata: Metadata = {
-  title: "LoreHaven — Context Architecture for AI Memory — Nick Carter",
+  title: "LoreHaven — AI Forgets Who You Are — Nick Carter",
   description:
     "A deep dive into LoreHaven: an MCP server that gives AI structured, automatic access to a personal knowledge vault — vault hierarchy, resource URI scheme, client architecture, and lessons learned.",
 };
@@ -56,7 +56,7 @@ export default function LoreHavenPage() {
 
         <ScrollReveal>
           <h1 className="mt-8 text-3xl md:text-4xl font-[family-name:var(--font-serif)] font-normal text-[#1a1a1a] leading-tight">
-            LoreHaven — Context Architecture for AI Memory
+            LoreHaven — AI Forgets Who You Are. Every Single Time.
           </h1>
 
           <p className="mt-4 text-[11px] uppercase tracking-[0.12em] text-[#a69e95]">
