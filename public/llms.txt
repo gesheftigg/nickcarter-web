@@ -21,18 +21,9 @@ What makes me different: the regulated-industry + AI intersection. I know what i
 ### LoreHaven MCP Server
 A context architecture system that gives AI structured access to a personal knowledge vault.
 Skills: Context Architecture, Decomposition, Specification Precision
-Link: https://lorehaven.ai
+LoreHaven: https://lorehaven.ai
+Deep dive: https://nickcarter.ai/portfolio/lorehaven
 Details: /llms-full.txt#lorehaven-mcp
-
-### IEC 62304 Compliance Transition
-Led the compliance transition of a live medical device product without disrupting clinical operations.
-Skills: Trust Boundary Design, Evaluation, Failure Pattern Recognition
-Details: /llms-full.txt#iec-62304
-
-### Platform Reliability at Scale (Dexcom)
-Took a platform from ~90% to 99.9% uptime, processing 1.7B events/day across 60 microservices.
-Skills: Failure Pattern Recognition, Cost Economics, Decomposition
-Details: /llms-full.txt#dexcom-platform
 
 ### CLAUDE.md & Memory System Design
 A persistent context architecture for AI-assisted workflows across multiple projects.
@@ -48,13 +39,19 @@ Details: /llms-full.txt#ship-with-intent
 
 ## How I Create with AI
 
-### Agentic (Novel)
+### Agentic
 AI drafting a 35-chapter thriller with consistent voice, style rules, and continuity across plotlines.
 Skills: Specification Precision, Decomposition, Evaluation, Context Architecture
 Deep dive: https://nickcarter.ai/portfolio/agentic-novel
 Details: /llms-full.txt#agentic-novel
 
-### Until The Day Is Over (Album)
+### nickcarter.ai
+This site. Designed and built with AI in a single session. Itself a portfolio piece.
+Skills: Specification Precision, Decomposition, Evaluation, Context Architecture
+Deep dive: https://nickcarter.ai/portfolio/this-site
+Details: /llms-full.txt#this-site
+
+### Until The Day Is Over
 A concept album produced and released using AI-augmented music production.
 Skills: Evaluation, Specification Precision
 Details: /llms-full.txt#until-the-day-is-over
