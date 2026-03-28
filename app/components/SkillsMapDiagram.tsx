@@ -36,7 +36,7 @@ export default function SkillsMapDiagram() {
         </h2>
         <p className="text-sm text-[#6b6560] mb-2">
           Based on the{" "}
-          <a href="https://shipwithintent.substack.com" className="text-[#b45309] underline underline-offset-2 hover:text-[#92400e]">
+          <a href="https://natesnewsletter.substack.com/" target="_blank" rel="noopener noreferrer" className="text-[#b45309] underline underline-offset-2 hover:text-[#92400e]">
             Nate Jones framework
           </a>
           {" "}— seven AI skills that show up consistently across $150K–$400K job postings
