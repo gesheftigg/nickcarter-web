@@ -26,10 +26,10 @@ export default function PortfolioPage() {
     <PageTransition>
       <div className="py-16">
         <ScrollReveal>
-          <h1 className="text-3xl md:text-4xl font-[family-name:var(--font-serif)] font-normal text-[#111] leading-tight">
+          <h1 className="text-3xl md:text-4xl font-[family-name:var(--font-serif)] font-normal text-[#1a1a1a] leading-tight">
             Portfolio
           </h1>
-          <p className="mt-3 text-base text-[#777] max-w-2xl">
+          <p className="mt-3 text-base text-[#6b6560] max-w-2xl">
             A closer look at how I build and create with AI.
           </p>
         </ScrollReveal>
@@ -68,7 +68,7 @@ export default function PortfolioPage() {
                   href={link.href}
                   target={link.href.startsWith("mailto:") ? undefined : "_blank"}
                   rel={link.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
-                  className="inline-block border-2 border-[#111] px-5 py-3 text-sm font-medium text-[#111] hover:bg-[#111] hover:text-white transition-colors"
+                  className="inline-block border-2 border-[#b45309] px-5 py-3 text-sm font-medium text-[#1a1a1a] hover:bg-[#b45309] hover:text-white transition-colors"
                 >
                   {link.label}
                 </a>

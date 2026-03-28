@@ -5,13 +5,13 @@ export default function Nav() {
     <nav className="flex items-center justify-between py-6">
       <Link
         href="/"
-        className="text-lg font-[family-name:var(--font-serif)] text-[#111] hover:text-[#555] transition-colors"
+        className="text-lg font-[family-name:var(--font-serif)] text-[#1a1a1a] hover:text-[#6b6560] transition-colors"
       >
         Nick Carter
       </Link>
       <Link
         href="/portfolio"
-        className="nav-link text-sm tracking-wide uppercase text-[#555] hover:text-[#111] transition-colors"
+        className="nav-link text-sm tracking-wide uppercase text-[#6b6560] hover:text-[#1a1a1a] transition-colors"
       >
         Portfolio
       </Link>

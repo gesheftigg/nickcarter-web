@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import DocumentPage from "@/app/components/DocumentPage";
 import { renderMarkdown } from "@/lib/markdown";
+import { agenticNovelNav } from "@/lib/document-nav";
 
 export const metadata: Metadata = {
   title: "Sample Chapter Outline — Agentic — Nick Carter",
@@ -16,6 +17,7 @@ export default function ChapterOutlinePage() {
       title="Sample Chapter Outline — Chapter 5: Sloane Goes Home"
       description="A complete chapter outline showing beat structure, hidden layer, character arc, and Super Bowl texture notes."
       backLink={{ href: "/portfolio/agentic-novel", label: "Agentic Overview" }}
+      nav={agenticNovelNav}
     >
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </DocumentPage>

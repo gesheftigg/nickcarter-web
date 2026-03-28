@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import DocumentPage from "@/app/components/DocumentPage";
 import { renderMarkdown } from "@/lib/markdown";
+import { agenticNovelNav } from "@/lib/document-nav";
 
 export const metadata: Metadata = {
   title: "Style Guide — Agentic — Nick Carter",
@@ -16,6 +17,7 @@ export default function StyleGuidePage() {
       title="Style Guide — Narrative Rules & POV System"
       description="What goes on the page, how the narrator works, and the rules every sentence must follow."
       backLink={{ href: "/portfolio/agentic-novel", label: "Agentic Overview" }}
+      nav={agenticNovelNav}
     >
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </DocumentPage>

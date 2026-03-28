@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import DocumentPage from "@/app/components/DocumentPage";
 import { renderMarkdown } from "@/lib/markdown";
+import { agenticNovelNav } from "@/lib/document-nav";
 
 export const metadata: Metadata = {
   title: "Sample Draft — Chapter 1 — Agentic — Nick Carter",
@@ -16,6 +17,7 @@ export default function SampleDraftPage() {
       title="Sample Draft — Chapter 1: Vigilantes Visit The Senator"
       description="The first chapter produced by the drafting system. Sloane's voice, the full cast introduction, and a senator held at gunpoint."
       backLink={{ href: "/portfolio/agentic-novel", label: "Agentic Overview" }}
+      nav={agenticNovelNav}
     >
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </DocumentPage>

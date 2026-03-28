@@ -7,15 +7,15 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="border-t border-[#ddd] py-8 mt-20">
-      <div className="flex flex-wrap gap-6 justify-center text-xs uppercase tracking-[0.12em] text-[#999]">
+    <footer className="border-t border-[#e8e4df] py-8 mt-20">
+      <div className="flex flex-wrap gap-6 justify-center text-xs uppercase tracking-[0.12em] text-[#a69e95]">
         {links.map((link) => (
           <a
             key={link.label}
             href={link.href}
             target={link.href.startsWith("mailto:") ? undefined : "_blank"}
             rel={link.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
-            className="hover:text-[#111] transition-colors"
+            className="hover:text-[#1a1a1a] transition-colors"
           >
             {link.label}
           </a>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import DocumentPage from "@/app/components/DocumentPage";
 import { renderMarkdown } from "@/lib/markdown";
+import { agenticNovelNav } from "@/lib/document-nav";
 
 export const metadata: Metadata = {
   title: "Ban List — Agentic — Nick Carter",
@@ -16,6 +17,7 @@ export default function BanListPage() {
       title="Ban List — What the Prose Must Never Do"
       description="Banned words, phrases, and moves. AI-voice tells, craft violations, and the one exception."
       backLink={{ href: "/portfolio/agentic-novel", label: "Agentic Overview" }}
+      nav={agenticNovelNav}
     >
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </DocumentPage>

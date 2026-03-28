@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import DocumentPage from "@/app/components/DocumentPage";
 import { renderMarkdown } from "@/lib/markdown";
+import { agenticNovelNav } from "@/lib/document-nav";
 
 export const metadata: Metadata = {
   title: "The Drafting Skill (SKILL.md) — Agentic — Nick Carter",
@@ -16,6 +17,7 @@ export default function SkillPage() {
       title="The Drafting Skill (SKILL.md)"
       description="The specification that drives every chapter draft — context loading protocol, prose rules, and quality gates."
       backLink={{ href: "/portfolio/agentic-novel", label: "Agentic Overview" }}
+      nav={agenticNovelNav}
     >
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </DocumentPage>

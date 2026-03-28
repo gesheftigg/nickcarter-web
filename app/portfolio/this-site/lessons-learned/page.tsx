@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import DocumentPage from "@/app/components/DocumentPage";
 import { renderMarkdown } from "@/lib/markdown";
+import { thisSiteNav } from "@/lib/document-nav";
 
 export const metadata: Metadata = {
   title: "Lessons Learned — nickcarter.ai — Nick Carter",
@@ -16,6 +17,7 @@ export default function LessonsLearnedPage() {
       title="Lessons Learned — What Went Wrong and How It Was Fixed"
       description="What went wrong, what was corrected, what would be done differently."
       backLink={{ href: "/portfolio/this-site", label: "nickcarter.ai Overview" }}
+      nav={thisSiteNav}
     >
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </DocumentPage>

@@ -54,17 +54,17 @@ export default function ThisSitePage() {
       <div className="py-16">
         <Link
           href="/portfolio"
-          className="text-xs uppercase tracking-[0.12em] text-[#999] hover:text-[#111] transition-colors"
+          className="text-xs uppercase tracking-[0.12em] text-[#a69e95] hover:text-[#1a1a1a] transition-colors"
         >
           &larr; Back to Portfolio
         </Link>
 
         <ScrollReveal>
-          <h1 className="mt-8 text-3xl md:text-4xl font-[family-name:var(--font-serif)] font-normal text-[#111] leading-tight">
+          <h1 className="mt-8 text-3xl md:text-4xl font-[family-name:var(--font-serif)] font-normal text-[#1a1a1a] leading-tight">
             nickcarter.ai — Built With AI in One Session
           </h1>
 
-          <p className="mt-4 text-[11px] uppercase tracking-[0.12em] text-[#999]">
+          <p className="mt-4 text-[11px] uppercase tracking-[0.12em] text-[#a69e95]">
             {artifact.skills.join(" \u00B7 ")}
           </p>
         </ScrollReveal>
@@ -72,7 +72,7 @@ export default function ThisSitePage() {
         <ScrollReveal delay={0.1}>
           <div className="mt-8 max-w-[65ch] space-y-4">
             {paragraphs.map((paragraph, i) => (
-              <p key={i} className="text-base leading-[1.7] text-[#555]">
+              <p key={i} className="text-base leading-[1.7] text-[#4a4540]">
                 {paragraph}
               </p>
             ))}
@@ -80,8 +80,8 @@ export default function ThisSitePage() {
         </ScrollReveal>
 
         <ScrollReveal delay={0.2}>
-          <div className="mt-20 border-t-2 border-[#111] pt-6">
-            <h2 className="text-2xl font-[family-name:var(--font-serif)] font-normal text-[#111] mb-8">
+          <div className="mt-20 border-t-2 border-[#1a1a1a] pt-6">
+            <h2 className="text-2xl font-[family-name:var(--font-serif)] font-normal text-[#1a1a1a] mb-8">
               Documents
             </h2>
             <div className="grid gap-6 sm:grid-cols-2">
@@ -89,15 +89,15 @@ export default function ThisSitePage() {
                 <ScrollReveal key={doc.href} delay={i * 0.08}>
                   <Link
                     href={doc.href}
-                    className="group block border-t border-[#ddd] pt-5 hover:border-[#111] transition-colors"
+                    className="group block border-t border-[#e8e4df] pt-5 hover:border-[#b45309] transition-colors"
                   >
-                    <h3 className="text-base font-[family-name:var(--font-serif)] font-normal text-[#111] group-hover:text-[#555]">
+                    <h3 className="text-base font-[family-name:var(--font-serif)] font-normal text-[#1a1a1a] group-hover:text-[#6b6560]">
                       {doc.title}
                     </h3>
-                    <p className="mt-2 text-sm text-[#777] leading-relaxed">
+                    <p className="mt-2 text-sm text-[#6b6560] leading-relaxed">
                       {doc.description}
                     </p>
-                    <p className="mt-3 text-sm font-medium text-[#111] group-hover:text-[#555] transition-colors view-details-link">
+                    <p className="mt-3 text-sm font-medium text-[#b45309] group-hover:text-[#92400e] transition-colors view-details-link">
                       Read <span className="view-details-arrow">&rarr;</span>
                     </p>
                   </Link>

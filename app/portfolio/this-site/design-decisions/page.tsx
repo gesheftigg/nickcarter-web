@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import DocumentPage from "@/app/components/DocumentPage";
 import { renderMarkdown } from "@/lib/markdown";
+import { thisSiteNav } from "@/lib/document-nav";
 
 export const metadata: Metadata = {
   title: "Design Decisions — nickcarter.ai — Nick Carter",
@@ -16,6 +17,7 @@ export default function DesignDecisionsPage() {
       title="Design Decisions — Every Visual Choice With Rationale"
       description="Every visual choice — editorial direction, hero style, card style, animations — with rationale."
       backLink={{ href: "/portfolio/this-site", label: "nickcarter.ai Overview" }}
+      nav={thisSiteNav}
     >
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </DocumentPage>

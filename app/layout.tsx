@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} antialiased`}>
-      <body className="min-h-screen flex flex-col bg-white text-[#111] font-[family-name:var(--font-inter)]">
+      <body className="min-h-screen flex flex-col bg-[#faf9f7] text-[#1a1a1a] font-[family-name:var(--font-inter)]">
         <div className="max-w-4xl mx-auto w-full flex flex-col flex-1 px-6">
           <Nav />
           <main className="flex-1">{children}</main>

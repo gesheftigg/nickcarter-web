@@ -16,24 +16,24 @@ export default function ArtifactDetail({ artifact }: ArtifactDetailProps) {
     >
       {/* Animated accent bar */}
       <motion.div
-        className="absolute left-0 top-0 w-[3px] bg-black"
+        className="absolute left-0 top-0 w-[3px] bg-[#b45309]"
         initial={{ height: 0 }}
         whileInView={{ height: "100%" }}
         viewport={{ once: true }}
         transition={{ duration: 0.4, ease: "easeOut" }}
       />
-      <h3 className="text-xl font-[family-name:var(--font-serif)] font-normal text-[#111]">
+      <h3 className="text-xl font-[family-name:var(--font-serif)] font-normal text-[#1a1a1a]">
         {artifact.title}
       </h3>
-      <p className="mt-2 text-base text-[#777] italic">{artifact.oneLiner}</p>
+      <p className="mt-2 text-base text-[#6b6560] italic">{artifact.oneLiner}</p>
 
-      <p className="mt-4 text-[11px] uppercase tracking-[0.12em] text-[#999]">
+      <p className="mt-4 text-[11px] uppercase tracking-[0.12em] text-[#a69e95]">
         {artifact.skills.join(" \u00B7 ")}
       </p>
 
       <div className="mt-6 space-y-4 max-w-[65ch]">
         {paragraphs.map((paragraph, i) => (
-          <p key={i} className="text-base leading-[1.7] text-[#555]">
+          <p key={i} className="text-base leading-[1.7] text-[#4a4540]">
             {paragraph}
           </p>
         ))}
@@ -47,7 +47,7 @@ export default function ArtifactDetail({ artifact }: ArtifactDetailProps) {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block border-2 border-[#111] px-5 py-2 text-sm font-medium text-[#111] hover:bg-[#111] hover:text-white transition-colors"
+              className="inline-block border-2 border-[#b45309] px-5 py-2 text-sm font-medium text-[#1a1a1a] hover:bg-[#b45309] hover:text-white transition-colors"
             >
               {link.label} &rarr;
             </a>
