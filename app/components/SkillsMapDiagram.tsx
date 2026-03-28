@@ -63,30 +63,28 @@ export default function SkillsMapDiagram() {
               </tr>
             </thead>
             <tbody>
-              {skills.map((skill, i) => (
-                <FadeIn key={skill.name} delay={0.15 + i * 0.05}>
-                  <tr className="border-t border-[#e8e4df]">
-                    <td className="py-3 pr-4">
-                      <div className="font-[family-name:var(--font-serif)] text-[13px] text-[#1a1a1a]">
-                        {skill.name}
-                      </div>
-                      <div className="text-[10px] text-[#a69e95] mt-0.5">
-                        {skill.artifacts.length > 0
-                          ? `${skill.artifacts.length} artifact${skill.artifacts.length !== 1 ? "s" : ""}`
-                          : "Building"}
-                      </div>
+              {skills.map((skill) => (
+                <tr key={skill.name} className="border-t border-[#e8e4df]">
+                  <td className="py-3 pr-4">
+                    <div className="font-[family-name:var(--font-serif)] text-[13px] text-[#1a1a1a]">
+                      {skill.name}
+                    </div>
+                    <div className="text-[10px] text-[#a69e95] mt-0.5">
+                      {skill.artifacts.length > 0
+                        ? `${skill.artifacts.length} artifact${skill.artifacts.length !== 1 ? "s" : ""}`
+                        : "Building"}
+                    </div>
+                  </td>
+                  {allArtifacts.map((artifact) => (
+                    <td key={artifact} className="py-3 px-2 text-center">
+                      {skill.artifacts.includes(artifact) ? (
+                        <div className="w-3.5 h-3.5 rounded-full bg-[#b45309] mx-auto" />
+                      ) : (
+                        <div className="w-3.5 h-3.5 rounded-full bg-[#f0eeeb] mx-auto" />
+                      )}
                     </td>
-                    {allArtifacts.map((artifact) => (
-                      <td key={artifact} className="py-3 px-2 text-center">
-                        {skill.artifacts.includes(artifact) ? (
-                          <div className="w-3.5 h-3.5 rounded-full bg-[#b45309] mx-auto" />
-                        ) : (
-                          <div className="w-3.5 h-3.5 rounded-full bg-[#f0eeeb] mx-auto" />
-                        )}
-                      </td>
-                    ))}
-                  </tr>
-                </FadeIn>
+                  ))}
+                </tr>
               ))}
             </tbody>
           </table>
