@@ -4,6 +4,15 @@
   --font-serif: Georgia, "Times New Roman", Times, serif;
 }
 
+/* Hide scrollbar for mobile nav */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
 /* Editorial prose styles for markdown-rendered content */
 .prose {
   font-family: var(--font-inter), system-ui, sans-serif;

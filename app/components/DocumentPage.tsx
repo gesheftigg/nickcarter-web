@@ -15,71 +15,40 @@ interface DocumentPageProps {
 
 function Sidebar({ nav, currentPath }: { nav: ArtifactNav; currentPath: string }) {
   return (
-    <>
-      {/* Desktop sidebar */}
-      <aside className="hidden md:block w-[200px] shrink-0 sticky top-6 self-start">
-        <div className="bg-[#f0eeeb] border-r border-[#e8e4df] rounded-sm p-4">
-          <Link
-            href="/portfolio"
-            className="block text-[10px] uppercase tracking-[0.12em] text-[#a69e95] hover:text-[#1a1a1a] transition-colors mb-4"
-          >
-            &larr; Back to Portfolio
-          </Link>
-          <Link
-            href={nav.overviewHref}
-            className="block text-[10px] uppercase tracking-[0.12em] font-semibold text-[#b45309] mb-3"
-          >
-            {nav.artifactTitle}
-          </Link>
-          <nav className="space-y-1">
-            {nav.documents.map((doc) => {
-              const isActive = currentPath === doc.href;
-              return (
-                <Link
-                  key={doc.href}
-                  href={doc.href}
-                  className={`block text-[13px] py-1.5 transition-colors ${
-                    isActive
-                      ? "border-l-2 border-[#b45309] pl-3 text-[#1a1a1a] font-semibold"
-                      : "pl-3.5 text-[#6b6560] hover:text-[#1a1a1a]"
-                  }`}
-                >
-                  {doc.title}
-                </Link>
-              );
-            })}
-          </nav>
-        </div>
-      </aside>
-
-      {/* Mobile horizontal nav */}
-      <div className="md:hidden mb-8 -mx-6 px-6 overflow-x-auto">
-        <div className="flex items-center gap-1 pb-2 min-w-max">
-          <Link
-            href={nav.overviewHref}
-            className="text-[10px] uppercase tracking-[0.12em] font-semibold text-[#b45309] mr-2 shrink-0"
-          >
-            {nav.artifactTitle}
-          </Link>
+    <aside className="hidden md:block w-[200px] shrink-0 sticky top-6 self-start">
+      <div className="bg-[#f0eeeb] border-r border-[#e8e4df] rounded-sm p-4">
+        <Link
+          href="/portfolio"
+          className="block text-[10px] uppercase tracking-[0.12em] text-[#a69e95] hover:text-[#1a1a1a] transition-colors mb-4"
+        >
+          &larr; Back to Portfolio
+        </Link>
+        <Link
+          href={nav.overviewHref}
+          className="block text-[10px] uppercase tracking-[0.12em] font-semibold text-[#b45309] mb-3"
+        >
+          {nav.artifactTitle}
+        </Link>
+        <nav className="space-y-1">
           {nav.documents.map((doc) => {
             const isActive = currentPath === doc.href;
             return (
               <Link
                 key={doc.href}
                 href={doc.href}
-                className={`shrink-0 text-[12px] px-2.5 py-1 rounded-sm transition-colors ${
+                className={`block text-[13px] py-1.5 transition-colors ${
                   isActive
-                    ? "bg-[#b45309] text-white font-semibold"
-                    : "text-[#6b6560] hover:text-[#1a1a1a]"
+                    ? "border-l-2 border-[#b45309] pl-3 text-[#1a1a1a] font-semibold"
+                    : "pl-3.5 text-[#6b6560] hover:text-[#1a1a1a]"
                 }`}
               >
                 {doc.title}
               </Link>
             );
           })}
-        </div>
+        </nav>
       </div>
-    </>
+    </aside>
   );
 }
 
@@ -111,11 +80,11 @@ export default function DocumentPage({
 
             <div className="flex-1 min-w-0">
               {/* Mobile horizontal nav */}
-              <div className="md:hidden mb-8 -mx-6 px-6 overflow-x-auto">
-                <div className="flex items-center gap-1 pb-2 min-w-max">
+              <div className="md:hidden mb-8 -mx-6 px-6 overflow-x-auto scrollbar-none">
+                <div className="flex items-center gap-1.5 pb-2 border-b border-[#e8e4df]">
                   <Link
                     href={nav.overviewHref}
-                    className="text-[10px] uppercase tracking-[0.12em] font-semibold text-[#b45309] mr-2 shrink-0"
+                    className="text-[10px] uppercase tracking-[0.12em] font-semibold text-[#b45309] mr-1 shrink-0"
                   >
                     {nav.artifactTitle}
                   </Link>
@@ -125,7 +94,7 @@ export default function DocumentPage({
                       <Link
                         key={doc.href}
                         href={doc.href}
-                        className={`shrink-0 text-[12px] px-2.5 py-1 rounded-sm transition-colors ${
+                        className={`shrink-0 text-[11px] px-2 py-1 rounded-sm transition-colors whitespace-nowrap ${
                           isActive
                             ? "bg-[#b45309] text-white font-semibold"
                             : "text-[#6b6560] hover:text-[#1a1a1a]"
