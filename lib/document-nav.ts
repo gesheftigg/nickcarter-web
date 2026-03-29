@@ -9,6 +9,18 @@ export interface ArtifactNav {
   documents: DocNavItem[];
 }
 
+export const localBrainNav: ArtifactNav = {
+  artifactTitle: "Local Brain",
+  overviewHref: "/portfolio/local-brain",
+  documents: [
+    { title: "Architecture", href: "/portfolio/local-brain/architecture" },
+    { title: "Security Review", href: "/portfolio/local-brain/security-review" },
+    { title: "MCP Tools", href: "/portfolio/local-brain/mcp-tools" },
+    { title: "Cost Tracking", href: "/portfolio/local-brain/cost-tracking" },
+    { title: "Lessons Learned", href: "/portfolio/local-brain/lessons-learned" },
+  ],
+};
+
 export const agenticNovelNav: ArtifactNav = {
   artifactTitle: "Agentic",
   overviewHref: "/portfolio/agentic-novel",

@@ -23,6 +23,18 @@ export const artifacts: Artifact[] = [
     deepDivePath: "/portfolio/lorehaven",
   },
   {
+    id: "local-brain",
+    title: "Local Brain",
+    oneLiner:
+      "A self-hosted MCP memory layer — nine tools, an admin panel, and a full security hardening pass. All data stays on your hardware.",
+    skills: ["Trust Boundary Design", "Decomposition", "Specification Precision", "Cost & Token Economics"],
+    section: "build",
+    detail:
+      "AI tools don't remember anything. Every session starts from zero. LoreHaven solves context — it tells the AI who you are. Local Brain solves memory — it lets the AI remember what you've thought about, worked on, and decided. Capture a thought in one conversation, search for it six months later in a different tool. The AI handles the MCP calls transparently. You just talk.\n\nThe implementation is a PostgreSQL + pgvector server running in Docker Compose on your own machine. Five services: database, MCP server, Cloudflare Tunnel for secure remote access, encrypted backup system with cloud sync, and a Docker socket proxy for safe admin operations. Nine MCP tools handle capture, semantic search, listing, stats, connections, archiving, export, usage tracking, and system health. The admin panel is a full server-rendered UI — thought browser, graph visualization, digest configuration, cost tracking, backup inventory, user management, and a config editor. No build step. No node_modules. Deno + Hono + JSX.\n\nThe security work was the most instructive part. A staff-level code review found 20 issues across the codebase — from a critical race condition in per-request user isolation (global mutable state under concurrent requests) to SQL interpolation in INTERVAL clauses, SSRF vectors in webhook delivery, and a JWT secret that defaulted to a hardcoded string. Sixteen of twenty findings were fixed in a single pass. The fixes touched every layer: AsyncLocalStorage for request scoping, discriminated unions replacing unsafe type coercion, parameterized queries throughout, webhook URL validation blocking private IPs and cloud metadata endpoints, rate limiter IP trust based on access mode, and Docker image version pinning.\n\nThe cost tracking system logs every AI API call — embedding and chat — with token counts and estimated costs by model. The usage_stats MCP tool and admin dashboard give you per-operation, per-model, and per-day breakdowns. You know exactly what your memory layer costs to run. For a system that makes API calls on every thought capture and search, that visibility is the difference between a tool you trust and a tool you're afraid to use.",
+    links: [{ label: "GitHub", url: "https://github.com/Chapworks/local-brain" }],
+    deepDivePath: "/portfolio/local-brain",
+  },
+  {
     id: "claude-md-systems",
     title: "CLAUDE.md & Memory System Design",
     oneLiner:

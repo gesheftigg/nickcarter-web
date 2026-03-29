@@ -16,16 +16,16 @@ function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 }
 
 const skills = [
-  { name: "Specification Precision", artifacts: ["LoreHaven", "CLAUDE.md", "Ship With Intent", "Agentic", "This Site", "Album"] },
+  { name: "Specification Precision", artifacts: ["LoreHaven", "Local Brain", "CLAUDE.md", "Ship With Intent", "Agentic", "This Site", "Album"] },
   { name: "Evaluation & Quality Judgment", artifacts: ["Ship With Intent", "Agentic", "This Site", "Album"] },
-  { name: "Decomposition for Delegation", artifacts: ["LoreHaven", "Ship With Intent", "Agentic", "This Site"] },
-  { name: "Failure Pattern Recognition", artifacts: ["LoreHaven", "Agentic"] },
-  { name: "Trust Boundary Design", artifacts: ["LoreHaven"] },
+  { name: "Decomposition for Delegation", artifacts: ["LoreHaven", "Local Brain", "Ship With Intent", "Agentic", "This Site"] },
+  { name: "Failure Pattern Recognition", artifacts: ["LoreHaven", "Local Brain", "Agentic"] },
+  { name: "Trust Boundary Design", artifacts: ["LoreHaven", "Local Brain"] },
   { name: "Context Architecture", artifacts: ["LoreHaven", "CLAUDE.md", "Agentic"] },
-  { name: "Cost & Token Economics", artifacts: [] },
+  { name: "Cost & Token Economics", artifacts: ["Local Brain"] },
 ];
 
-const allArtifacts = ["LoreHaven", "CLAUDE.md", "Ship With Intent", "Agentic", "This Site", "Album"];
+const allArtifacts = ["LoreHaven", "Local Brain", "CLAUDE.md", "Ship With Intent", "Agentic", "This Site", "Album"];
 
 export default function SkillsMapDiagram() {
   return (

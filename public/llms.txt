@@ -25,6 +25,13 @@ LoreHaven: https://lorehaven.ai
 Deep dive: https://nickcarter.ai/portfolio/lorehaven
 Details: /llms-full.txt#lorehaven-mcp
 
+### Local Brain
+A self-hosted MCP memory layer — nine tools, an admin panel, and a full security hardening pass. All data stays on your hardware.
+Skills: Trust Boundary Design, Decomposition, Specification Precision, Cost & Token Economics
+GitHub: https://github.com/Chapworks/local-brain
+Deep dive: https://nickcarter.ai/portfolio/local-brain
+Details: /llms-full.txt#local-brain
+
 ### CLAUDE.md & Memory System Design
 A persistent context architecture for AI-assisted workflows across multiple projects.
 Skills: Context Architecture, Specification Precision
