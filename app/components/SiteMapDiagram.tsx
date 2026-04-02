@@ -69,9 +69,8 @@ export default function SiteMapDiagram() {
               <div className="w-0.5 h-4 bg-[#e8e4df]" />
             </div>
             <div className="space-y-2">
-              <Node label="LoreHaven" href="/portfolio/lorehaven" desc="MCP server · context vault" />
+              <Node label="Lore Haven" href="/portfolio/lorehaven" desc="Portable AI context · web app" />
               <Node label="Local Brain" href="/portfolio/local-brain" desc="Self-hosted AI memory layer" />
-              <Node label="CLAUDE.md Systems" href="/portfolio/claude-md-systems" desc="Persistent AI memory" />
               <Node label="Ship With Intent" href="/portfolio/ship-with-intent" desc="Content operation" />
               <Node label="Agentic Novel" href="/portfolio/agentic-novel" desc="35-chapter drafting system" />
               <Node label="This Site" href="/portfolio/this-site" desc="Built in one session" />
@@ -105,8 +104,7 @@ export default function SiteMapDiagram() {
               <Node label="7 Agentic docs" href="/portfolio/agentic-novel" desc="Skill, style guide, ban list, drafts..." />
               <Node label="6 Local Brain docs" href="/portfolio/local-brain" desc="Architecture, security, cost tracking..." />
               <Node label="5 Site docs" href="/portfolio/this-site" desc="Spec, plan, design decisions..." />
-              <Node label="4 LoreHaven docs" href="/portfolio/lorehaven" desc="Architecture, MCP, client..." />
-              <Node label="4 CLAUDE.md docs" href="/portfolio/claude-md-systems" desc="Architecture, commands, journal..." />
+              <Node label="4 Lore Haven docs" href="/portfolio/lorehaven" desc="Context, product design, cloud..." />
               <Node label="4 Ship With Intent docs" href="/portfolio/ship-with-intent" desc="Threads, voice, platform, workflow..." />
               <Node label="3 Tool Audit docs" href="/portfolio/tool-audit" desc="How it works, research, spec proposal..." />
               <Node label="4 Album docs" href="/portfolio/until-the-day-is-over" desc="Concept, band, tracks, production..." />

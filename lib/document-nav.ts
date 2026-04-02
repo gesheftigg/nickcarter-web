@@ -37,24 +37,13 @@ export const agenticNovelNav: ArtifactNav = {
 };
 
 export const lorehavenNav: ArtifactNav = {
-  artifactTitle: "LoreHaven",
+  artifactTitle: "Lore Haven",
   overviewHref: "/portfolio/lorehaven",
   documents: [
     { title: "Context Architecture", href: "/portfolio/lorehaven/context-architecture" },
-    { title: "MCP Server", href: "/portfolio/lorehaven/mcp-server" },
-    { title: "Client Architecture", href: "/portfolio/lorehaven/client-architecture" },
+    { title: "Product Design", href: "/portfolio/lorehaven/product-design" },
+    { title: "Cloud Architecture", href: "/portfolio/lorehaven/cloud-architecture" },
     { title: "Lessons Learned", href: "/portfolio/lorehaven/lessons-learned" },
-  ],
-};
-
-export const claudeMdNav: ArtifactNav = {
-  artifactTitle: "CLAUDE.md Systems",
-  overviewHref: "/portfolio/claude-md-systems",
-  documents: [
-    { title: "Four-Layer Architecture", href: "/portfolio/claude-md-systems/architecture" },
-    { title: "Custom Commands", href: "/portfolio/claude-md-systems/commands" },
-    { title: "Lore Journal", href: "/portfolio/claude-md-systems/lore-journal" },
-    { title: "Design Principles", href: "/portfolio/claude-md-systems/design-principles" },
   ],
 };
 

@@ -4,18 +4,18 @@ import { renderMarkdown } from "@/lib/markdown";
 import { lorehavenNav } from "@/lib/document-nav";
 
 export const metadata: Metadata = {
-  title: "Lessons Learned — Lore Haven — Nick Carter",
+  title: "Cloud Architecture — Web-First, Not Desktop — Lore Haven — Nick Carter",
   description:
-    "What broke, what was redesigned, and why the pivot from desktop to cloud was the right call.",
+    "The Electron-to-web pivot, S3 storage design, and Phase 2 remote MCP plans for Lore Haven.",
 };
 
-export default function LessonsLearnedPage() {
-  const html = renderMarkdown("lorehaven/lessons-learned.md");
+export default function CloudArchitecturePage() {
+  const html = renderMarkdown("lorehaven/cloud-architecture.md");
 
   return (
     <DocumentPage
-      title="Lessons Learned"
-      description="What broke, what was redesigned, and why the pivot was the right call."
+      title="Cloud Architecture — Web-First, Not Desktop"
+      description="The Electron-to-web pivot, S3 storage design, and the Phase 2 remote MCP plan."
       backLink={{ href: "/portfolio/lorehaven", label: "Lore Haven Overview" }}
       nav={lorehavenNav}
     >

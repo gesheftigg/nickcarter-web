@@ -6,9 +6,9 @@ import PageTransition from "@/app/components/PageTransition";
 import ArchitectureDiagram from "./architecture-diagram";
 
 export const metadata: Metadata = {
-  title: "LoreHaven — AI Forgets Who You Are — Nick Carter",
+  title: "Lore Haven — AI Forgets Who You Are — Nick Carter",
   description:
-    "A deep dive into LoreHaven: an MCP server that gives AI structured, automatic access to a personal knowledge vault — vault hierarchy, resource URI scheme, client architecture, and lessons learned.",
+    "A deep dive into Lore Haven: a consumer web app that solves the AI cold start problem — portable context for non-technical users, cloud-first architecture, and product design lessons.",
 };
 
 const documents = [
@@ -16,30 +16,30 @@ const documents = [
     title: "Context Architecture",
     href: "/portfolio/lorehaven/context-architecture",
     description:
-      "Vault hierarchy, Lore document design, tier system, language-as-architecture",
+      "Lore document design, Haven vault, pricing tiers, language-as-architecture",
   },
   {
-    title: "MCP Server",
-    href: "/portfolio/lorehaven/mcp-server",
+    title: "Product Design",
+    href: "/portfolio/lorehaven/product-design",
     description:
-      "Resource URI scheme, session identity, stdio transport, security model",
+      "Lore Builder wizard, starter packs, cross-vendor portability, design constraints",
   },
   {
-    title: "Client Architecture",
-    href: "/portfolio/lorehaven/client-architecture",
+    title: "Cloud Architecture",
+    href: "/portfolio/lorehaven/cloud-architecture",
     description:
-      "Electron service layer, config merge strategy, browser OAuth, monorepo structure",
+      "The Electron-to-web pivot, S3 storage design, Phase 2 remote MCP",
   },
   {
     title: "Lessons Learned",
     href: "/portfolio/lorehaven/lessons-learned",
     description:
-      "What broke, what was redesigned, what would be done differently",
+      "What broke, what was redesigned, and why the pivot was the right call",
   },
 ];
 
 export default function LoreHavenPage() {
-  const artifact = artifacts.find((a) => a.id === "lorehaven-mcp");
+  const artifact = artifacts.find((a) => a.id === "lorehaven");
   if (!artifact) return null;
 
   const paragraphs = artifact.detail.split("\n\n");
@@ -56,7 +56,7 @@ export default function LoreHavenPage() {
 
         <ScrollReveal>
           <h1 className="mt-8 text-3xl md:text-4xl font-[family-name:var(--font-serif)] font-normal text-[#1a1a1a] leading-tight">
-            LoreHaven — AI Forgets Who You Are. Every Single Time.
+            Lore Haven — AI Forgets Who You Are. Every Single Time.
           </h1>
 
           <p className="mt-4 text-[11px] uppercase tracking-[0.12em] text-[#a69e95]">

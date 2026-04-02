@@ -15,14 +15,6 @@ function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
   );
 }
 
-function ResourceBadge({ label }: { label: string }) {
-  return (
-    <span className="inline-block text-[10px] bg-[#fff7ed] text-[#b45309] px-2.5 py-0.5 rounded-full border border-[#fed7aa]">
-      {label}
-    </span>
-  );
-}
-
 function ServiceBox({ title, desc }: { title: string; desc: string }) {
   return (
     <div className="bg-[#f5f3f0] border border-[#e8e4df] rounded-md p-4">
@@ -78,15 +70,15 @@ export default function ArchitectureDiagram() {
           Architecture
         </h2>
         <p className="text-sm text-[#6b6560] mb-10">
-          How context flows from the user to AI tools — and back
+          How context flows from the user to any AI tool — cloud-first, no installation required
         </p>
       </FadeIn>
 
       {/* AI Tools */}
       <FadeIn delay={0.1}>
-        <LayerLabel>AI Tools</LayerLabel>
+        <LayerLabel>AI Tools (any vendor)</LayerLabel>
         <div className="flex gap-3 justify-center flex-wrap">
-          {["Claude Desktop", "Claude Code", "ChatGPT", "Gemini"].map((tool) => (
+          {["Claude", "ChatGPT", "Gemini", "Any Future AI"].map((tool) => (
             <span key={tool} className="bg-[#f0eeeb] border border-[#e8e4df] rounded-full px-4 py-2 text-[12px] text-[#4a4540]">
               {tool}
             </span>
@@ -98,80 +90,63 @@ export default function ArchitectureDiagram() {
       <FadeIn delay={0.15}>
         <div className="flex justify-center gap-10 py-4">
           <div className="flex flex-col items-center gap-1">
-            <span className="text-[10px] uppercase tracking-[1.5px] text-[#a69e95]">MCP Protocol</span>
+            <span className="text-[10px] uppercase tracking-[1.5px] text-[#a69e95]">Copy / Paste</span>
             <div className="w-0.5 h-6 bg-[#b45309]" />
             <div className="w-2 h-2 bg-[#b45309] rounded-full" />
           </div>
           <div className="flex flex-col items-center gap-1">
-            <span className="text-[10px] uppercase tracking-[1.5px] text-[#d4d0cc]">Copy / Paste</span>
+            <span className="text-[10px] uppercase tracking-[1.5px] text-[#d4d0cc]">MCP / API (Phase 2)</span>
             <div className="w-0.5 h-6 bg-[#e8e4df]" />
             <div className="w-2 h-2 bg-[#e8e4df] rounded-full" />
           </div>
         </div>
       </FadeIn>
 
-      {/* MCP Server */}
+      {/* Web App */}
       <FadeIn delay={0.2}>
-        <LayerLabel>Local Server (localhost:7891)</LayerLabel>
-        <div className="border-2 border-[#b45309] bg-[#fffbf5] rounded-md p-4">
-          <div className="font-[family-name:var(--font-serif)] text-base text-[#1a1a1a]">MCP Server</div>
-          <div className="text-[12px] text-[#6b6560] mt-1">
-            stdio transport · 8 resource types · session tracking (UUID + date + tool)
-          </div>
-          <div className="mt-3 flex gap-2 flex-wrap">
-            <ResourceBadge label="lore://me" />
-            <ResourceBadge label="vault://permanent/*" />
-            <ResourceBadge label="vault://workspace/*" />
-            <ResourceBadge label="vault://temp/*" />
-            <ResourceBadge label="docs://lorehaven/*" />
-          </div>
+        <SectionDivider label="Web App (lorehaven.ai)" />
+      </FadeIn>
+
+      <FadeIn delay={0.25}>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+          <ServiceBox title="Lore Builder Wizard" desc="Plain-English questions → structured Lore<br/>Starter packs for 5 user profiles" />
+          <ServiceBox title="Haven Vault" desc="Lore editor, Saved Prompts, Journal<br/>Version history & full export" />
+          <ServiceBox title="Account & Billing" desc="Sign up, subscribe, manage plan<br/>Stripe integration" />
         </div>
       </FadeIn>
 
-      <FadeIn delay={0.25}><Arrow label="File System" /></FadeIn>
+      <FadeIn delay={0.3}><Arrow label="API (HTTPS)" /></FadeIn>
 
-      {/* Vault */}
-      <FadeIn delay={0.3}>
-        <LayerLabel>Haven Vault (~/LoreHaven/)</LayerLabel>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          <VaultBox title="Lore" lines={["Core document", "300–600 words", "Always loaded"]} />
-          <VaultBox title="Permanent" lines={["5–10 curated files", "Auto-indexed", "AI-readable"]} />
-          <VaultBox title="Workspace" lines={["Active projects", "Per-project README", "Working files"]} />
-          <VaultBox title="Temp" lines={["Session artifacts", "Date + UUID", "Review & migrate"]} />
-        </div>
-      </FadeIn>
-
-      <FadeIn delay={0.35}><SectionDivider label="Desktop Client (Electron)" /></FadeIn>
-
-      {/* Client Services */}
-      <FadeIn delay={0.4}>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          <ServiceBox title="Vault Watcher" desc="fs.watch on ~/LoreHaven/<br/>Rebuilds index on change" />
-          <ServiceBox title="Config Merge" desc="Atomic key-level merge<br/>Claude Desktop config" />
-          <ServiceBox title="Auth Service" desc="Browser OAuth<br/>OS keychain (keytar)" />
-          <ServiceBox title="Sync Service" desc="Lore → cloud backup<br/>Pull on first launch" />
-        </div>
-      </FadeIn>
-
-      <FadeIn delay={0.45}><Arrow label="API (HTTPS)" /></FadeIn>
-
-      {/* Cloud */}
-      <FadeIn delay={0.5}>
-        <LayerLabel>Cloud (api.lorehaven.ai)</LayerLabel>
+      {/* API */}
+      <FadeIn delay={0.35}>
+        <LayerLabel>API (api.lorehaven.ai)</LayerLabel>
         <div className="grid grid-cols-3 gap-3">
-          <ServiceBox title="Auth & Accounts" desc="OAuth, sessions, subscription" />
-          <ServiceBox title="Lore Storage" desc="Versioned backup, schema migration" />
-          <ServiceBox title="Starter Packs" desc="Distributed to clients on sync" />
+          <ServiceBox title="Auth" desc="Email/password + OAuth<br/>Session management" />
+          <ServiceBox title="Vault Operations" desc="CRUD, version history<br/>Export & restore" />
+          <ServiceBox title="Billing" desc="Stripe subscriptions<br/>Free → Personal tier" />
         </div>
       </FadeIn>
 
-      <FadeIn delay={0.55}><SectionDivider label="Web (lorehaven.ai)" /></FadeIn>
+      <FadeIn delay={0.4}><Arrow label="Object Storage" /></FadeIn>
 
-      {/* Web */}
-      <FadeIn delay={0.6}>
-        <div className="grid grid-cols-2 gap-3">
-          <ServiceBox title="Lore Builder Wizard" desc="Plain-English questions → structured Lore<br/>No install required (Tier 1 value)" />
-          <ServiceBox title="Account & Billing" desc="Sign up, subscribe, download client" />
+      {/* Storage */}
+      <FadeIn delay={0.45}>
+        <LayerLabel>Cloud Storage (S3-compatible)</LayerLabel>
+        <div className="grid grid-cols-3 gap-3">
+          <VaultBox title="Lore" lines={["Core document", "300–600 words", "Plain text (Markdown)"]} />
+          <VaultBox title="Saved Prompts" lines={["AI instructions", "Organized & tagged", "Never lost"]} />
+          <VaultBox title="Journal" lines={["Private reflections", "Fully versioned", "Exportable"]} />
+        </div>
+      </FadeIn>
+
+      {/* Storage properties */}
+      <FadeIn delay={0.5}>
+        <div className="mt-4 flex gap-3 justify-center flex-wrap">
+          {["Versioned snapshots", "Plain text forever", "Full export anytime", "No lock-in"].map((prop) => (
+            <span key={prop} className="inline-block text-[10px] bg-[#fff7ed] text-[#b45309] px-2.5 py-0.5 rounded-full border border-[#fed7aa]">
+              {prop}
+            </span>
+          ))}
         </div>
       </FadeIn>
     </div>

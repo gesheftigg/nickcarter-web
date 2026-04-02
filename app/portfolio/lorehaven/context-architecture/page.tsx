@@ -5,9 +5,9 @@ import { lorehavenNav } from "@/lib/document-nav";
 import ArchitectureDiagram from "../architecture-diagram";
 
 export const metadata: Metadata = {
-  title: "Context Architecture for Non-Technical Users — LoreHaven — Nick Carter",
+  title: "Context Architecture for Non-Technical Users — Lore Haven — Nick Carter",
   description:
-    "Vault hierarchy, Lore document design, tier system, and language-as-architecture in the LoreHaven MCP server.",
+    "Lore document design, Haven vault, pricing tiers, and language-as-architecture in Lore Haven.",
 };
 
 export default function ContextArchitecturePage() {
@@ -16,8 +16,8 @@ export default function ContextArchitecturePage() {
   return (
     <DocumentPage
       title="Context Architecture for Non-Technical Users"
-      description="Vault hierarchy, Lore document design, tier system, and the language-as-architecture principle."
-      backLink={{ href: "/portfolio/lorehaven", label: "LoreHaven Overview" }}
+      description="Lore document design, Haven vault, pricing tiers, and the language-as-architecture principle."
+      backLink={{ href: "/portfolio/lorehaven", label: "Lore Haven Overview" }}
       nav={lorehavenNav}
     >
       <div dangerouslySetInnerHTML={{ __html: html }} />
