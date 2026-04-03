@@ -392,7 +392,7 @@ git commit -m "feat: apply design polish — typography, colors, spacing, mobile
 - [ ] **Step 1: Push repo to GitHub**
 
 ```bash
-git remote add origin git@github.com:gesheftigg/nickcarter-web.git
+git remote add origin git@github.com:yesnickcarter/nickcarter-web.git
 git push -u origin main
 ```
 (Adjust remote URL if the repo name or org differs.)
