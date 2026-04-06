@@ -4,18 +4,21 @@
   "private": true,
   "scripts": {
     "dev": "next dev --port 3003",
-    "prebuild": "npx tsx scripts/generate-llms-txt.ts",
+    "prebuild": "npx tsx scripts/generate-llms-txt.ts && npx tsx scripts/generate-chat-context.ts && npx tsx scripts/generate-deep-dive-files.ts",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "pull-logs": "npx tsx scripts/pull-chat-logs.ts"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.82.0",
     "framer-motion": "^12.38.0",
     "next": "16.2.1",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260405.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
