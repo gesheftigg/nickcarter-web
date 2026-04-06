@@ -79,6 +79,38 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     );
   }
 
+  // Validate message shape and content size
+  for (const msg of messages) {
+    if (
+      !msg ||
+      typeof msg.content !== "string" ||
+      (msg.role !== "user" && msg.role !== "assistant")
+    ) {
+      return new Response(
+        JSON.stringify({ error: "Invalid message format" }),
+        { status: 400, headers: { "Content-Type": "application/json" } }
+      );
+    }
+    if (msg.content.length > 10000) {
+      return new Response(
+        JSON.stringify({ error: "Message too long" }),
+        { status: 400, headers: { "Content-Type": "application/json" } }
+      );
+    }
+  }
+
+  // Validate selectedDocs IDs (alphanumeric + hyphens only)
+  if (selectedDocs && Array.isArray(selectedDocs)) {
+    for (const docId of selectedDocs) {
+      if (typeof docId !== "string" || !/^[a-z0-9-]+$/.test(docId)) {
+        return new Response(
+          JSON.stringify({ error: "Invalid document ID" }),
+          { status: 400, headers: { "Content-Type": "application/json" } }
+        );
+      }
+    }
+  }
+
   const userMessageCount = messages.filter((m) => m.role === "user").length;
   if (userMessageCount > 15) {
     return new Response(
@@ -119,7 +151,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
   const stream = await client.messages.stream({
     model: "claude-sonnet-4-6",
-    max_tokens: 1024,
+    max_tokens: 4096,
     system: systemPrompt,
     messages: messages.map((m) => ({ role: m.role, content: m.content })),
   });

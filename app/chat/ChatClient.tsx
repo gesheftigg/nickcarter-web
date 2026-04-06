@@ -117,11 +117,16 @@ export default function ChatClient() {
               const event = JSON.parse(jsonStr);
               if (event.type === "delta") {
                 fullText += event.text;
+                // Strip reasoning block from streaming display
+                const reasoningIdx = fullText.indexOf("---reasoning---");
+                const displayText = reasoningIdx !== -1
+                  ? fullText.slice(0, reasoningIdx).trim()
+                  : fullText;
                 setMessages((prev) => {
                   const updated = [...prev];
                   updated[updated.length - 1] = {
                     role: "assistant",
-                    content: fullText,
+                    content: displayText,
                     reasoning: null,
                   };
                   return updated;
