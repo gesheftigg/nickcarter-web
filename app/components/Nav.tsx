@@ -28,6 +28,12 @@ export default function Nav() {
         >
           Ask AI
         </Link>
+        <Link
+          href="/fit"
+          className="nav-link text-sm tracking-wide uppercase text-[#6b6560] hover:text-[#1a1a1a] transition-colors"
+        >
+          Check Fit
+        </Link>
       </div>
     </nav>
   );

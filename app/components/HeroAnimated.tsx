@@ -66,12 +66,16 @@ export default function HeroAnimated() {
           </Link>
         </motion.div>
         <motion.div
-          className="hero-btn inline-block border border-[#e8e4df] px-7 py-3 text-sm text-[#a69e95] tracking-wide text-center"
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 1.05, ease: "easeOut" }}
         >
-          Check Fit &middot; soon
+          <Link
+            href="/fit"
+            className="hero-btn inline-block border-2 border-[#b45309] px-7 py-3 text-sm font-medium text-[#1a1a1a] tracking-wide hover:bg-[#b45309] hover:text-white transition-colors text-center"
+          >
+            Check Fit
+          </Link>
         </motion.div>
       </div>
     </motion.section>
