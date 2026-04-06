@@ -1,7 +1,7 @@
 # Nick Carter — Full Profile
 # Source: nickcarter.ai
 # Format: Markdown for AI agent consumption
-# Generated: 2026-04-02
+# Generated: 2026-04-06
 
 > Engineering leader who builds AI systems — and teaches teams to build them too.
 
@@ -54,6 +54,25 @@ April 2014 – June 2022. San Diego, CA.
 ---
 
 ## How I Build with AI — Full Details
+
+<a id="intentpad"></a>
+### IntentPad
+
+An AI-powered productivity system — capture thoughts in one field, let AI classify them, plan your week with two goals per day, and learn how you work through AI-generated weekly reviews.
+
+**Skills demonstrated:** Full-Stack Product Development, AI Integration, Product Design, Custom Auth, Design Systems
+
+Most productivity apps give you a list. Lists don't work — they grow faster than you can check things off, and the important stuff drowns in the noise. IntentPad takes a different approach: capture anything in a single text field, let AI classify it (note, task, or event), then plan your week with just two commitments per day — a Primary Goal and a Secondary Goal.
+
+The constraint is the feature. When you can only pick two things, you have to decide what actually matters. The weekly planner is a negotiation with your future self — you set three outcomes for the week (Big 3), fill your daily slots, and at the end of the week, AI analyzes what happened. Not to judge, but to help you see patterns: 'You completed everything Monday through Wednesday. Nothing after Wednesday got done.' Week after week, you learn your rhythm.
+
+Built end-to-end in a single session: custom JWT auth with refresh token rotation (no third-party auth providers), AI classification with confidence-based graduation (high confidence auto-promotes notes to tasks, medium suggests, low stays as note), the Pulp & Ink comic book design system with halftone textures and inky shadows, a three-column desktop planner cockpit, responsive mobile views, Stripe billing, GDPR-compliant account deletion with an external ledger, and Resend email integration.
+
+The tech stack: Hono API on Node.js, Drizzle ORM with PostgreSQL, Next.js frontend, OpenAI GPT-4o-mini for classification, Tailwind CSS with a custom comic book design system. Deployed on Cloudflare Pages and Railway.
+
+IntentPad: https://intentpad.com
+
+---
 
 <a id="lorehaven"></a>
 ### Lore Haven
@@ -161,6 +180,8 @@ This site. Designed and built with AI in a single session. Itself a portfolio pi
 This site was designed, spec'd, planned, and built in a single AI-assisted session — approximately three hours from first brainstorm to running deployment. The process used the same skills the site describes: a design spec was written and automatically reviewed (catching four issues before any code was written), an eight-task implementation plan was created, and each task was dispatched to a fresh AI subagent with curated context.
 
 The editorial design direction was chosen through interactive visual comparison — three directions shown side-by-side in a browser, refined through two more rounds (hero style, card style), then executed. The signature left-border accent bar emerged from the Bold Editorial hero choice and carries through every card and section on the site. Six animation packages (scroll reveal, hero entrance, accent bar draw, hover micro-interactions, page transitions, subtle parallax) were added to give the site the feel of a premium build.
+
+The site includes an Ask AI feature — a chat interface where hiring managers can have multi-turn conversations with an AI that knows Nick's work deeply. The AI follows strict anti-hallucination rules, signals confidence tiers (documented, inferred, gap) on every answer, and includes a collapsible reasoning block showing exactly which sources it drew from. Hiring managers can load deep-dive portfolio documents into the conversation context and download the full transcript as markdown. Every rule the AI follows is published transparently on the site.
 
 The site also serves markdown versions of its content at /llms.txt and /llms-full.txt — structured for AI agent consumption. When a recruiter pastes the URL into Claude, the response is substantive instead of garbled HTML. Building for the world where agents consume the web, not just humans.
 

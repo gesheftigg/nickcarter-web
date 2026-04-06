@@ -18,6 +18,12 @@ What makes me different: the regulated-industry + AI intersection. I know what i
 
 ## How I Build with AI
 
+### IntentPad
+An AI-powered productivity system — capture thoughts in one field, let AI classify them, plan your week with two goals per day, and learn how you work through AI-generated weekly reviews.
+Skills: Full-Stack Product Development, AI Integration, Product Design, Custom Auth, Design Systems
+IntentPad: https://intentpad.com
+Details: /llms-full.txt#intentpad
+
 ### Lore Haven
 A consumer web app that solves the AI cold start problem — portable context for non-technical users.
 Skills: Product Design, Context Architecture, Specification Precision
