@@ -13,6 +13,12 @@ export interface DeepDiveGroup {
 
 export const deepDiveGroups: DeepDiveGroup[] = [
   {
+    artifact: "Resume & Background",
+    docs: [
+      { id: "resume", title: "Full Resume", filePath: "resume.md" },
+    ],
+  },
+  {
     artifact: "Lore Haven",
     docs: [
       { id: "lorehaven-context-architecture", title: "Context Architecture", filePath: "lorehaven/context-architecture.md" },
