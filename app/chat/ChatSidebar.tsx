@@ -15,12 +15,25 @@ interface ChatSidebarProps {
   messages: Message[];
 }
 
-const STARTERS = [
-  "What's Nick's experience with regulated software?",
-  "Tell me about Lore Haven",
-  "What AI skills does Nick have?",
-  "What are Nick's leadership gaps?",
-  "Describe Nick's team management experience",
+interface Starter {
+  text: string;
+  loadDocs?: string[]; // doc IDs to auto-check when clicked
+}
+
+const STARTERS: Starter[] = [
+  { text: "What's Nick's experience with regulated software?" },
+  {
+    text: "Tell me about IntentPad",
+    loadDocs: [
+      "intentpad-overview",
+      "intentpad-ai-integration",
+      "intentpad-architecture",
+      "intentpad-product-design",
+    ],
+  },
+  { text: "What AI skills does Nick have?" },
+  { text: "What are Nick's leadership gaps?" },
+  { text: "Describe Nick's team management experience" },
 ];
 
 function generateTranscript(messages: Message[]): string {
@@ -95,13 +108,22 @@ export default function ChatSidebar({
           Try asking
         </p>
         <div className="space-y-2">
-          {STARTERS.map((text) => (
+          {STARTERS.map((starter) => (
             <button
-              key={text}
-              onClick={() => onStarterClick(text)}
+              key={starter.text}
+              onClick={() => {
+                if (starter.loadDocs) {
+                  for (const docId of starter.loadDocs) {
+                    if (!selectedDocs.has(docId)) {
+                      onToggleDoc(docId);
+                    }
+                  }
+                }
+                onStarterClick(starter.text);
+              }}
               className="block w-full text-left text-xs text-[#6b6560] hover:text-[#1a1a1a] border border-[#e8e4df] hover:border-[#b45309] px-3 py-2 transition-colors leading-relaxed"
             >
-              {text}
+              {starter.text}
             </button>
           ))}
         </div>
