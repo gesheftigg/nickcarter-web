@@ -135,6 +135,29 @@ export default function ChatSidebar({
         </p>
       </div>
 
+      {/* Consent banner — prominent, appears after first AI response */}
+      {showConsent && (
+        <div className="border border-[#e8e4df] px-4 py-3 bg-white">
+          <label className="flex items-start gap-3 cursor-pointer">
+            <input
+              type="checkbox"
+              checked={consent}
+              onChange={(e) => onConsentChange(e.target.checked)}
+              className="accent-[#b45309] w-3.5 h-3.5 mt-0.5 shrink-0"
+            />
+            <div>
+              <p className="text-xs font-medium text-[#4a4540]">
+                Share this conversation?
+              </p>
+              <p className="text-[11px] text-[#6b6560] leading-relaxed mt-1">
+                Help Nick improve this tool — opt in to share for quality
+                improvements. Off by default.
+              </p>
+            </div>
+          </label>
+        </div>
+      )}
+
       <div className="text-[11px] text-[#a69e95] space-y-2">
         <p>
           Message {messageCount} of {maxMessages}
@@ -147,21 +170,6 @@ export default function ChatSidebar({
           >
             Download transcript
           </button>
-        )}
-
-        {showConsent && (
-          <label className="flex items-start gap-2 cursor-pointer mt-2">
-            <input
-              type="checkbox"
-              checked={consent}
-              onChange={(e) => onConsentChange(e.target.checked)}
-              className="accent-[#b45309] w-3 h-3 mt-0.5"
-            />
-            <span className="text-[11px] text-[#6b6560] leading-relaxed">
-              Help Nick improve this tool — share this conversation for quality
-              improvements
-            </span>
-          </label>
         )}
       </div>
     </aside>
