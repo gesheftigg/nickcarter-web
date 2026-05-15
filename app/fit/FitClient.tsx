@@ -144,7 +144,7 @@ export default function FitClient() {
                   const updated = [...prev];
                   updated[updated.length - 1] = {
                     role: "assistant",
-                    content: "Something went wrong. Please try again.",
+                    content: event.text || "Something went wrong. Please try again.",
                     reasoning: null,
                   };
                   return updated;
